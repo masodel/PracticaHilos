@@ -3,14 +3,22 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="350" prefWidth="520" spacing="20" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.practicahilos.ProcesadorController">
+<VBox alignment="CENTER" prefHeight="580.0" prefWidth="520" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.practicahilos.ProcesadorController">
 
     <padding>
         <Insets bottom="25" left="25" right="25" top="25" />
     </padding>
 
     <Label style="-fx-font-size: 22px;" text="Procesador de registros" />
+
+    <!-- ===================== CLIENTES ===================== -->
+    <Label text="Clientes">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
 
     <Label fx:id="lblEstado" text="Esperando inicio" />
 
@@ -19,10 +27,31 @@
     <Label fx:id="lblPorcentaje" text="0%" />
 
     <HBox alignment="CENTER" spacing="10">
-        <Button fx:id="btnIniciar" onAction="#iniciarProceso" text="Iniciar" />
-
-        <Button fx:id="btnDetener" disable="true" onAction="#detenerProceso" text="Detener" />
-
-        <Button fx:id="btnReiniciar" onAction="#reiniciarProceso" text="Reiniciar" />
+        <Button fx:id="btnIniciar" onAction="#iniciarProcesoCliente" text="Iniciar" />
+        <Button fx:id="btnDetener" disable="true" onAction="#detenerProcesoCliente" text="Detener" />
     </HBox>
+
+    <Separator prefWidth="420" />
+
+    <!-- ===================== PRODUCTOS ===================== -->
+    <Label text="Productos">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+    <Label fx:id="lblEstadoProducto" text="Esperando inicio" />
+
+    <ProgressBar fx:id="barraProgresoProducto" prefWidth="420" progress="0" />
+
+    <Label fx:id="lblPorcentajeProducto" text="0%" />
+
+    <HBox alignment="CENTER" spacing="10">
+        <Button fx:id="btnIniciarProducto" onAction="#iniciarProcesoProductos" text="Iniciar" />
+        <Button fx:id="btnDetenerProducto" disable="true" onAction="#detenerProcesoProductos" text="Detener" />
+    </HBox>
+
+    <Separator prefWidth="420" />
+
+    <Button fx:id="btnReiniciar" onAction="#reiniciarProceso" text="Reiniciar" />
 </VBox>
